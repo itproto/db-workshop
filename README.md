@@ -14,3 +14,8 @@ http://www.timestored.com/kdb-guides/who-uses-kdb
 https://www.npmjs.com/package/node-q
 https://github.com/KxSystems/cookbook
 https://github.com/mfitsilis/cooldbapps/tree/0cc40818ac90cc72941c8a7967ee2f12dbd7e675
+
+# With node:
+https://learning.oreilly.com/library/view/node-cookbook-/9781838558758/B13828_07_Final_ASB.xhtml#_idParaDest-188
+
+## 1. 

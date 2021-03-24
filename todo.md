@@ -1,0 +1,4 @@
+- spin-off db via docker
+- ? populate fixture
+- spin-off node app (same for all)
+- query db
