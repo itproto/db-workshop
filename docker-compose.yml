@@ -24,4 +24,4 @@ services:
       - "80:80"
       - "443:443"
     links:
-      - node-web
+      - node-web:web
