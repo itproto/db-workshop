@@ -14,11 +14,11 @@ services:
     volumes:
       - /tmp/node-web/npm-cache:/root/.npm:z
       - ./app/src:/usr/app/src:z
-    restart: "no"
+    restart: always
 
   nginx:
-    image: ${DOCKER_USER}/nginx:${BUILD_VERSION}
-    build: ./nginx/
+    image: nginx
+    build: ./nginx
     restart: always
     ports:
       - "80:80"
