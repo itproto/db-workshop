@@ -72,7 +72,7 @@ resource "aws_instance" "web" {
   //]
 
   key_name               = aws_key_pair.auth.id
-  vpc_security_group_ids = ["${aws_security_group.allow_web.id}"]
+  vpc_security_group_ids = [aws_security_group.allow_web.id]
   subnet_id              = aws_subnet.default.id
 
 
@@ -141,6 +141,43 @@ resource "aws_instance" "web" {
   }
 }
 
+
+locals {
+  connection = {
+    type        = "ssh"
+    user        = "ec2-user"
+    host        = "18.133.252.144" // aws_instance.web.public_ip
+    private_key = file(var.private_key_path)
+  }
+}
+
+resource "null_resource" "docker_build" {
+  triggers = {
+    always_run = timestamp()
+  }
+
+  provisioner "file" {
+    source      = "./../app"
+    destination = "/home/ec2-user/"
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = aws_instance.web.public_ip
+      private_key = file(var.private_key_path)
+    }
+  }
+
+  provisioner "remote-exec" {
+    inline = ["docker-compose down && docker-compose up --build -d"]
+    connection {
+      type = "ssh"
+      user = "ec2-user"
+      host = aws_instance.web.public_ip
+
+      private_key = file(var.private_key_path)
+    }
+  }
+}
 
 //module "docker" {
 //  source = "./docker"
