@@ -172,3 +172,5 @@ resource "null_resource" "docker_build" {
 //  source = "./docker"
 //  aws_ip = "${module.aws.public_ip}"
 //}
+
+

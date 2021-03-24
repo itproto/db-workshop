@@ -1,0 +1,3 @@
+[submodule "db-fixture-rest-api"]
+	path = db-fixture-rest-api
+	url = https://github.com/itproto/db-fixture-rest-api.git

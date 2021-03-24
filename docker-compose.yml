@@ -1,6 +1,22 @@
 version: "3"
 
 services:
+  db:
+    image: mongo:4.2.8
+    container_name: db
+    ports:
+      - "27017:27017"
+    restart: always
+    volumes:
+      - ./data:/data/db
+
+  mongo-seed:
+    build: ./mongo-seed
+    depends_on:
+      - db
+    environment:
+      WAIT_HOSTS: db:27017
+
   node-web:
     image: node-web
     container_name: node_web
