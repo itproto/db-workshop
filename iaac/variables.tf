@@ -1,11 +1,11 @@
 variable "public_key_path" {
   description = "Path to the SSH public key to be used for authentication."
-  default     = "./key.pem.pub"
+  default     = "./temp/key.pem.pub"
 }
 
 variable "private_key_path" {
   description = "Path to the SSH private key to be used for authentication."
-  default     = "./key.pem"
+  default     = "./temp/key.pem"
 }
 
 variable "key_name" {

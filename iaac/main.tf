@@ -128,6 +128,7 @@ resource "aws_instance" "web" {
       "sudo curl -L https://github.com/docker/compose/releases/download/1.15.0/docker-compose-`uname -s`-`uname -m` > docker-compose",
       "sudo mv docker-compose /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
+      "sudo chmod +x /app/sh/reboot.sh",
       "sudo /usr/local/bin/docker-compose up --build -d" //--scale web=2"
     ]
     connection {
@@ -139,6 +140,7 @@ resource "aws_instance" "web" {
     }
   }
 }
+
 
 //module "docker" {
 //  source = "./docker"
