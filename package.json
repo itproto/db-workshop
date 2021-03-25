@@ -3,8 +3,13 @@
   "version": "1.0.0",
   "description": "- In finance\r https://learning.oreilly.com/library/view/learn-algorithmic-trading/9781789348347/900b6b94-c508-4061-bd24-ac9dde6cf4cc.xhtml",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "redis-commander": "npx redis-commander"
+  },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "redis-commander": "^0.7.0"
+  }
 }

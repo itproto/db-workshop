@@ -10,12 +10,31 @@ services:
     volumes:
       - ./data:/data/db
 
+  cache:
+    image: redis
+    container_name: cache
+    ports:
+      - "6379:6379"
+    volumes:
+      - ../data/redis:/data
+    entrypoint: redis-server --appendonly yes
+    restart: always
+
   mongo-seed:
     build: ./mongo-seed
     depends_on:
       - db
     environment:
       WAIT_HOSTS: db:27017
+
+  mongo-gui:
+    container_name: "mongo-gui"
+    image: ugleiton/mongo-gui
+    restart: always
+    ports:
+      - "4321:4321"
+    environment:
+      - MONGO_URL=mongodb://db:27017
 
   node-web:
     image: node-web
@@ -31,6 +50,8 @@ services:
       - /tmp/node-web/npm-cache:/root/.npm:z
       - ./app/src:/usr/app/src:z
     restart: always
+    links:
+      - cache
 
   nginx:
     image: nginx

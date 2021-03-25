@@ -106,6 +106,18 @@ resource "aws_instance" "web" {
   }
 
   provisioner "file" {
+    source      = "./../mongo-seed"
+    destination = "/home/ec2-user/mongo-seed"
+    connection {
+      type = "ssh"
+      user = "ec2-user"
+      host = self.public_ip
+
+      private_key = file(var.private_key_path)
+    }
+  }
+
+  provisioner "file" {
     source      = "../docker-compose.yml"
     destination = "/home/ec2-user/docker-compose.yml"
     connection {
