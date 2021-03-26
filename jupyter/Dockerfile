@@ -29,8 +29,9 @@ RUN pip install jupyter-kernel-gateway
 # "start-notebook.sh", "--NotebookApp.port=9999", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.notebook_dir=/srv/notebooks/", "--", 
 
 
-# COPY ./docker-entrypoint.sh /
-# ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"] 
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"] 
+
 
 # Configure container startup
 # ENTRYPOINT ["tini", "--", "jupyter", "kernelgateway"]
@@ -45,7 +46,8 @@ RUN pip install jupyter-kernel-gateway
 #     ]
 
 # # Add notebook served by the kernel gateway
-# ADD hello.ipynb /srv/notebooks/
+ADD hello.ipynb /srv/notebooks/
+# ADD hello.ipynb /home/jovyan/work/
 
 # # Run container as user jovyan
 USER jovyan
