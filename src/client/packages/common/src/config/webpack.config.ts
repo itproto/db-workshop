@@ -1,5 +1,4 @@
 const path = require('path');
-const  = require('@itpr/common')
 const dist = 'dist'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 require('dotenv').config()

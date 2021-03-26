@@ -1,5 +1,6 @@
 {
   "private": true,
+  "name": "ts-starter",
   "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc",

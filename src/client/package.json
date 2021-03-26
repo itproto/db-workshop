@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "lint": "lerna run --concurrency 1 lint",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap --hoist",
+    "pub": "lerna publish --conventional-commits --yes"
   }
 }
