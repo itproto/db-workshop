@@ -23,6 +23,11 @@ https://learning.oreilly.com/library/view/node-cookbook-/9781838558758/B13828_07
 
 # Dashboards
 https://github.com/topics/admin-dashboard
+https://github.com/marmelab/react-admin
+https://github.com/tabler/tabler
+https://github.com/gridstack/gridstack.js
+https://github.com/ColorlibHQ/AdminLTE
+https://github.com/booleanhunter/ReactJS-AdminLTE
 
 #DATA
 https://piktochart.com/blog/100-data-sets/?p=149#finance

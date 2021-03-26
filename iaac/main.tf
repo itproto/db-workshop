@@ -189,17 +189,7 @@ resource "null_resource" "docker_build" {
     always_run = timestamp()
   }
 
-  provisioner "file" {
-    source      = "./../jupyter"
-    destination = "/home/ec2-user/"
-    connection {
-      type        = "ssh"
-      user        = "ec2-user"
-      host        = aws_instance.web.public_ip
-      private_key = file(var.private_key_path)
-    }
-  }
-
+  /*
   provisioner "file" {
     source      = "./../app"
     destination = "/home/ec2-user/"
@@ -222,8 +212,33 @@ resource "null_resource" "docker_build" {
     }
   }
 
+
+
+  provisioner "file" {
+    source      = "./../jupyter"
+    destination = "/home/ec2-user/"
+
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = aws_instance.web.public_ip
+      private_key = file(var.private_key_path)
+    }
+  }
+
   provisioner "remote-exec" {
     inline = ["docker-compose down && docker-compose up --build -d"]
+    connection {
+      type = "ssh"
+      user = "ec2-user"
+      host = aws_instance.web.public_ip
+
+      private_key = file(var.private_key_path)
+    }
+  }
+  */
+  provisioner "remote-exec" {
+    inline = ["docker-compose restart hello-jup"]
     connection {
       type = "ssh"
       user = "ec2-user"

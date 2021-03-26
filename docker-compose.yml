@@ -68,7 +68,7 @@ services:
       context: ./jupyter
       dockerfile: Dockerfile
     image: hello-jup
-    container_name: hello-jup
+    container_name: hello_jup
     ports:
       - "7777:7777"
       - "9999:9999"
