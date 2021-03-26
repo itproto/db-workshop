@@ -28,8 +28,10 @@ RUN pip install jupyter-kernel-gateway
 
 # "start-notebook.sh", "--NotebookApp.port=9999", "--NotebookApp.token=''", "--NotebookApp.password=''", "--NotebookApp.notebook_dir=/srv/notebooks/", "--", 
 
-
+USER root
 COPY ./docker-entrypoint.sh /
+RUN ["chmod", "+x", "/docker-entrypoint.sh"]
+
 ENTRYPOINT ["tini", "--", "/docker-entrypoint.sh"] 
 
 

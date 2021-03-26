@@ -45,6 +45,20 @@ resource "aws_security_group" "allow_web" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
+  ingress {
+    from_port   = 7777
+    to_port     = 7777
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 9999
+    to_port     = 9999
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
 
   ingress {
     from_port   = 80
@@ -166,7 +180,29 @@ resource "null_resource" "docker_build" {
   }
 
   provisioner "file" {
+    source      = "./../jupyter"
+    destination = "/home/ec2-user/"
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = aws_instance.web.public_ip
+      private_key = file(var.private_key_path)
+    }
+  }
+
+  provisioner "file" {
     source      = "./../app"
+    destination = "/home/ec2-user/"
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = aws_instance.web.public_ip
+      private_key = file(var.private_key_path)
+    }
+  }
+
+  provisioner "file" {
+    source      = "../docker-compose.yml"
     destination = "/home/ec2-user/"
     connection {
       type        = "ssh"

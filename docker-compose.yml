@@ -62,3 +62,27 @@ services:
       - "443:443"
     links:
       - node-web:web
+
+  kernel_gateway:
+    build:
+      context: ./jupyter
+      dockerfile: Dockerfile
+    image: hello-jup
+    container_name: hello-jup
+    ports:
+      - "7777:7777"
+      - "9999:9999"
+    volumes:
+      - "./jupyter/book/:/srv/notebooks:Z"
+    user: root
+    environment:
+      CHOWN_HOME: "yes"
+      HOWN_HOME_OPTS: "-R"
+      KG_ALLOW_ORIGIN: "*"
+      KG_LIST_KERNELS: "True"
+      KG_AUTH_TOKEN: colonels
+    # command: >
+    #   jupyter kernelgateway
+    #   --KernelGatewayApp.ip=0.0.0.0
+    #   --KernelGatewayApp.log_level=DEBUG
+# DOOOONE
