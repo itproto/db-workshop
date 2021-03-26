@@ -1,5 +1,7 @@
 {
   "private": true,
+  "name": "@itpr/shell",
+  "version": "0.0.1",
   "main": "src/index.ts",
   "scripts": {
     "tsc": "tsc",
@@ -9,11 +11,13 @@
     "serve": "http-server dist",
     "start:simple": "run-p wpw serve",
     "start:serve": "webpack serve --open",
-    "start:mon": "nodemon --config config/nodemon.json",
+    "start:mon": "nodemon --config onfig/nodemon.json",
     "build:prod": "cross-env NODE_ENV=production webpack",
-    "webpack": "webpack --inline --progress --profile --colors"
+    "webpack": "webpack --inline --progress --profile --colors",
+    "start": "npm run start:mon"
   },
   "dependencies": {
+    "dotenv": "^8.2.0",
     "lodash.template": "^4.5.0"
   },
   "devDependencies": {

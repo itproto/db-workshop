@@ -1,5 +1,4 @@
 {
     "watch": "webpack.config.js",
-    "exec": "webpack serve --open",
-    "delay": "2500"
+    "exec": "webpack serve --open"
 }

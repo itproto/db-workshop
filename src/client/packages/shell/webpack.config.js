@@ -1,6 +1,7 @@
 const path = require('path');
 const dist = 'dist'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+require('dotenv').config()
 
 const optimization = {
     splitChunks: {
@@ -30,7 +31,7 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: "ts-loader" },
+            { test: /\.tsx?$/, loader: "ts-loader", exclude: /node_modules/ },
         ],
     },
     plugins: [
@@ -41,6 +42,7 @@ module.exports = {
     ],
     devServer: {
         contentBase: './dist',
+        port: process.env.WBP_PORT
     },
     optimization
 };
