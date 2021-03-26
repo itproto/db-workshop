@@ -19,3 +19,11 @@ https://github.com/mfitsilis/cooldbapps/tree/0cc40818ac90cc72941c8a7967ee2f12dbd
 https://learning.oreilly.com/library/view/node-cookbook-/9781838558758/B13828_07_Final_ASB.xhtml#_idParaDest-188
 
 ## 1. 
+
+
+# Dashboards
+https://github.com/topics/admin-dashboard
+
+#DATA
+https://piktochart.com/blog/100-data-sets/?p=149#finance
+https://github.com/awesomedata/awesome-public-datasets
