@@ -9,3 +9,17 @@
     - https://2ality.com/2020/04/webpack-typescript.html
     - [] prettier
     - [] lint
+
+
+# Step1
+- install ts, webp, webp-cli
+  
+# Step 2
+- html plugin
+
+# Step3
+- dev server
+- optimization
+  - DEV
+    - main-bundle = 200lines
+    - vendors = 10000

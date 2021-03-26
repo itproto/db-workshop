@@ -1,13 +1,14 @@
-import template from 'lodash.template';
+// import template from 'lodash.template';
 
 const $el = document.querySelector('#root');
 if ($el) {
-  var compiled = template(`
+  $el.innerHTML = `Hello world`
+  /*var compiled = template(`
     <h1><%- heading %></h1>
     Current date and time: <%- dateTimeString %>
   `);
   $el.innerHTML = compiled({
-    heading: 'ts-demo-webpack',
+    heading: 'ts-demo-webpack1',
     dateTimeString: new Date().toISOString(),
-  });
+  });*/
 }

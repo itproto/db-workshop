@@ -2,6 +2,18 @@ const path = require('path');
 const dist = 'dist'
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+const optimization = {
+    splitChunks: {
+        cacheGroups: {
+            commons: {
+                test: /[\\/]node_modules[\\/]/,
+                name: 'vendors',
+                chunks: 'all'
+            }
+        }
+    }
+};
+
 module.exports = {
     mode: "development",
     devtool: "inline-source-map",
@@ -27,4 +39,8 @@ module.exports = {
             template: "public/index.html"
         })
     ],
+    devServer: {
+        contentBase: './dist',
+    },
+    optimization
 };
