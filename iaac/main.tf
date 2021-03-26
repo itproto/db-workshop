@@ -131,10 +131,20 @@ resource "aws_instance" "web" {
     source      = "./../mongo-seed"
     destination = "/home/ec2-user/mongo-seed"
     connection {
-      type = "ssh"
-      user = "ec2-user"
-      host = self.public_ip
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = self.public_ip
+      private_key = file(var.private_key_path)
+    }
+  }
 
+  provisioner "file" {
+    source      = "./../jupyter"
+    destination = "/home/ec2-user/"
+    connection {
+      type        = "ssh"
+      user        = "ec2-user"
+      host        = self.public_ip
       private_key = file(var.private_key_path)
     }
   }
