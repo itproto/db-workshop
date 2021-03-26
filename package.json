@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "redis-commander": "npx redis-commander",
-    "lint": "lerna run --concurrency 1 lint",
-    "postinstall": "lerna bootstrap"
+
   },
   "keywords": [],
   "author": "",

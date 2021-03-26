@@ -1,0 +1,9 @@
+{
+  "name": "@itpr/client",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "lint": "lerna run --concurrency 1 lint",
+    "postinstall": "lerna bootstrap"
+  }
+}
