@@ -5,6 +5,7 @@
   "scripts": {
     "lint": "lerna run --concurrency 1 lint",
     "postinstall": "lerna bootstrap --hoist",
+    "start": "lerna run start --parallel --scope @itpr/*",
     "pub": "lerna publish --conventional-commits --yes"
   }
 }

@@ -1,4 +1,4 @@
-import commonWebpackConfig from './config/webpack.config';
+import { config as commonWebpackConfig } from './config/webpack.config'
 
 export {
     commonWebpackConfig

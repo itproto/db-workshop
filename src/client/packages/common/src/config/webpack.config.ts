@@ -1,6 +1,6 @@
-const path = require('path');
+import path = require('path');
 const dist = 'dist'
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 require('dotenv').config()
 
 const optimization = {
@@ -15,7 +15,7 @@ const optimization = {
     }
 };
 
-module.exports = {
+export const config = {
     mode: "development",
     devtool: "inline-source-map",
     entry: {
@@ -41,8 +41,7 @@ module.exports = {
         })
     ],
     devServer: {
-        contentBase: './dist',
-        port: process.env.WBP_PORT
+        contentBase: './dist'
     },
     optimization
 };
