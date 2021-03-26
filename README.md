@@ -32,3 +32,6 @@ https://github.com/booleanhunter/ReactJS-AdminLTE
 #DATA
 https://piktochart.com/blog/100-data-sets/?p=149#finance
 https://github.com/awesomedata/awesome-public-datasets
+
+# Tech stack
+## lerna
