@@ -8,8 +8,10 @@
     "wpw": "webpack --watch",
     "serve": "http-server dist",
     "start:simple": "run-p wpw serve",
-    "start:mon": "nodemon",
-    "start:serve": "webpack serve --open"
+    "start:serve": "webpack serve --open",
+    "start:mon": "nodemon --config config/nodemon.json",
+    "build:prod": "cross-env NODE_ENV=production webpack",
+    "webpack": "webpack --inline --progress --profile --colors"
   },
   "dependencies": {
     "lodash.template": "^4.5.0"
