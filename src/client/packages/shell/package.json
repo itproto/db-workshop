@@ -11,17 +11,20 @@
     "start:simple": "run-p wpw serve",
     "start:serve": "webpack serve --open",
     "start:mon": "nodemon --config onfig/nodemon.json",
-    "build:prod": "cross-env NODE_ENV=production webpack",
+    "build": "cross-env NODE_ENV=production webpack",
     "webpack": "webpack --inline --progress --profile --colors",
     "start": "npm run start:serve"
   },
   "dependencies": {
     "@itpr/common": "^1.0.0",
     "dotenv": "^8.2.0",
-    "lodash.template": "^4.5.0"
+    "lodash.template": "^4.5.0",
+    "typescript": "^4.2.3"
   },
   "devDependencies": {
     "@types/lodash.template": "^4.5.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^8.2.0",
     "html-webpack-plugin": "^5.3.1",
     "nodemon": "^2.0.7",
     "npm-run-all": "^4.1.5",

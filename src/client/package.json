@@ -1,11 +1,15 @@
 {
-  "name": "@itpr/client",
+  "name": "@itpr/client-lerna",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "lint": "lerna run --concurrency 1 lint",
-    "postinstall": "lerna bootstrap --hoist",
+    "postinstall": "lerna bootstrap",
     "start": "lerna run start --parallel --scope @itpr/*",
+    "build": "lerna run build --parallel --scope @itpr/*",
     "pub": "lerna publish --conventional-commits --yes"
+  },
+  "devDependencies": {
+    "lerna": "^4.0.0"
   }
 }

@@ -1,0 +1,26 @@
+version: "3"
+services:
+  # web client
+  # nginx:
+  #   image: ${DOCKER_USER}/nginx-client:${BUILD_VERSION}
+  #   container_name: nginx_client
+  #   restart: always
+  #   build:
+  #     context: ./../services/nginx
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "80:80"
+  client:
+    image: ${DOCKER_USER}/client:${BUILD_VERSION}
+    container_name: client
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - CI=true
+        - NPM_TOKEN=${NPM_TOKEN}
+        - REACT_APP_BUILD_VERSION=${BUILD_VERSION}
+    ports:
+      - "80:80"
+    environment:
+      - ENVIRONMENT_NAME=${ENVIRONMENT_NAME}

@@ -23,3 +23,11 @@
   - DEV
     - main-bundle = 200lines
     - vendors = 10000
+
+
+layout
+https://codepen.io/radiolips/pen/ZowXyr
+
+
+DEMO
+https://github.com/micro-frontends-demo
