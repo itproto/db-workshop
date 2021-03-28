@@ -8,7 +8,7 @@
     "tscw": "tsc --watch",
     "wp": "webpack",
     "wpw": "webpack --watch",
-    "start:serve": "webpack serve --open",
+    "start:serve": "webpack serve",
     "start:mon": "nodemon --config onfig/nodemon.json",
     "build": "cross-env NODE_ENV=production webpack",
     "webpack": "webpack --inline --progress --profile --colors",

@@ -14,7 +14,7 @@ export class AppComponent {
   ];
 
   rowData = [
-    { make: 'Toyota', model: 'aaaaa', price: 35000 },
+    { make: 'Toyota', model: 'aaaaa1', price: 35000 },
     { make: 'Ford', model: 'Mondeo', price: 32000 },
     { make: 'Porsche', model: 'Boxter', price: 72000 }
   ];
