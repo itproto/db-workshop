@@ -11,15 +11,18 @@ const templ = {
         return this.get$(wc.shadowRoot!);
     },
 
-    get$: (scope: DocumentFragment /*ShadowRoot*/) => ({
-        overlay: 'bg-overlay',
-        thumb: 'thumb'
-    }),
+    get$: (scope: DocumentFragment /*ShadowRoot*/) => (
+        {
+            overlay: scope.getElementById('bg-overlay'),
+            thumb: scope.getElementById('thumb')
+        }
+    ),
 
     css: () => `${css}`,
     html: () => `${html}`,
 
     render() {
+        console.log(html)
         return `
 <style>
     ${this.css()}

@@ -1,6 +1,7 @@
 {
     "extends": "@itpr/common/static/tsconfig.json",
     "compilerOptions": {
+        "experimentalDecorators": true,
         "rootDir": "src",
         "outDir": "dist"
     }

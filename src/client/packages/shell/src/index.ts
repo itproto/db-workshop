@@ -1,22 +1,25 @@
 
 const $el = document.querySelector('#root');
-const policy = `sandbox="allow-forms allow-modals allow-scripts"`;
 
 import './components/web-comp/web-comp';
+import { MfeCellElement } from './components/mfe-cell/mfe-cell';
+
 
 
 import { WebComp } from './components/web-comp/web-comp';
 if ($el) {
   $el.innerHTML = `
-  <h1>Shell 2</h1>
+  <h1>Shell 4</h1>
+  <itpr-mfe-cell></itpr-mfe-cell>
+  <itpr-mfe-cell></itpr-mfe-cell>
   <${WebComp.tag}/>
-  <itpr-web-comp />
-  <!--
-  <iframe ${policy} seamless loading="lazy"  src="http://localhost/blotter"  height="500px" width="500px"></iframe>
-  <iframe ${policy} seamless  loading="lazy" src="http://localhost/ag-blotter" height="500px" width="500px"></iframe>
- -->
+  <itpr-web-comp></itpr-web-comp>
+
+
+
   `
   $el.appendChild(WebComp.create())
+  MfeCellElement.create()
 }
 
 // https://habr.com/ru/post/488516/
