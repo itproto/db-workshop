@@ -1,9 +1,9 @@
 {
-  "name": "ag-blotter",
+  "name": "@itpr/ag-blotter",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "node scripts/run-env",
+    "start": "npx kill-port 5003 && node scripts/run-env",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -33,6 +33,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
+    "cross-env": "^7.0.3",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.1.0",
@@ -40,6 +41,7 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "^1.5.0",
+    "kill-port": "^1.6.1",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",

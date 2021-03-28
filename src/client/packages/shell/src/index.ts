@@ -5,7 +5,7 @@ if ($el) {
   $el.innerHTML = `
   <h1>Shell 2</h1>
   <iframe ${policy} seamless loading="lazy"  src="http://localhost/blotter"  height="500px" width="500px"></iframe>
-  <iframe ${policy} seamless  loading="lazy" src="http://localhost/blotter" height="500px" width="500px"></iframe>
+  <iframe ${policy} seamless  loading="lazy" src="http://localhost/ag-blotter" height="500px" width="500px"></iframe>
 
   `
 }

@@ -28,3 +28,4 @@ services:
     volumes:
       - ./packages/blotter/dist/blotter:/usr/share/nginx/html/blotter
       - ./packages/shell/dist/shell:/usr/share/nginx/html/shell
+      - ./packages/ag-blotter/dist/ag-blotter:/usr/share/nginx/html/ag-blotter

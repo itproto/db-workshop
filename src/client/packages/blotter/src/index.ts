@@ -1,5 +1,5 @@
 
 const $el = document.querySelector('#root');
 if ($el) {
-  $el.innerHTML = `BLOTTER`
+  $el.innerHTML = `BLOTTER 1`
 }
