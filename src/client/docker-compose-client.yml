@@ -26,5 +26,5 @@ services:
     environment:
       - ENVIRONMENT_NAME=${ENVIRONMENT_NAME}
     volumes:
-      - ./packages/blotter/dist:/usr/share/nginx/html/blotter
-      - ./packages/shell/dist:/usr/share/nginx/html/shell
+      - ./packages/blotter/dist/blotter:/usr/share/nginx/html/blotter
+      - ./packages/shell/dist/shell:/usr/share/nginx/html/shell

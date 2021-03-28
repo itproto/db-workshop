@@ -8,12 +8,12 @@ const config = merge(commonWebpackConfig, {
         blotter: "./src/index.ts",
     },
     output: {
-        path: resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'dist/blotter'),
         filename: "[name]-bundle.js",
         clean: true
     },
     devServer: {
-        contentBase: './dist',
+        contentBase: './dist/blotter',
         port: process.env.WBP_PORT,
         disableHostCheck: true
     }

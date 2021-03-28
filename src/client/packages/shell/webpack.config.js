@@ -9,12 +9,12 @@ const config = merge(commonWebpackConfig, {
         shell: "./src/index.ts",
     },
     output: {
-        path: resolve(__dirname, 'dist'),
+        path: resolve(__dirname, 'dist/shell'),
         filename: "[name]-bundle.js",
         clean: true
     },
     devServer: {
-        contentBase: './dist',
+        contentBase: './dist/shell',
         port: process.env.WBP_PORT,
         disableHostCheck: true,
         host: 'localhost'

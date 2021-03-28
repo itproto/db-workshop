@@ -4,8 +4,7 @@
   "description": "- In finance\r https://learning.oreilly.com/library/view/learn-algorithmic-trading/9781789348347/900b6b94-c508-4061-bd24-ac9dde6cf4cc.xhtml",
   "main": "index.js",
   "scripts": {
-    "redis-commander": "npx redis-commander",
-
+    "redis-commander": "npx redis-commander"
   },
   "keywords": [],
   "author": "",

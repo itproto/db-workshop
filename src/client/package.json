@@ -13,5 +13,6 @@
     "cross-env": "^7.0.3",
     "kill-port": "^1.6.1",
     "lerna": "^4.0.0"
-  }
+  },
+  "dependencies": {}
 }
