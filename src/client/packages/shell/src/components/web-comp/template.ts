@@ -2,6 +2,8 @@
 
 
 import css from 'raw-loader!./web-comp.css';
+import html from 'raw-loader!./web-comp.htm';
+
 const templ = {
     create(wc: HTMLElement) {
         const shadowRoot = wc.attachShadow({ mode: 'open' });
@@ -10,23 +12,19 @@ const templ = {
     },
 
     get$: (scope: DocumentFragment /*ShadowRoot*/) => ({
-        overlay: scope.getElementById('bg-overlay'),
-        thumb: scope.getElementById('thumb'),
+        overlay: 'bg-overlay',
+        thumb: 'thumb'
     }),
 
     css: () => `${css}`,
-
-    html: () => `
-<div id="bg-overlay">Hello</div>
-<div id="thumb">World</div>
-`,
+    html: () => `${html}`,
 
     render() {
         return `
 <style>
     ${this.css()}
 </style>
-${this.html()}`;
+    ${this.html()}`;
     }
 }
 

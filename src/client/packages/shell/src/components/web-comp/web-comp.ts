@@ -11,9 +11,7 @@ export class WebComp<D = any> extends HTMLElement {
         this.addEventListener('mousedown', e => this.eventHandler(e));
     }
 
-    static get observedAttributes() {
-        return ['value'];
-    }
+    static get observedAttributes() { return ['value']; }
 
     attributeChangedCallback(name: string, oldVal: any, newValue: any) {
         switch (name) {
