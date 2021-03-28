@@ -12,7 +12,7 @@
     "start:mon": "nodemon --config onfig/nodemon.json",
     "build": "cross-env NODE_ENV=production webpack",
     "webpack": "webpack --inline --progress --profile --colors",
-    "start": "npm run start:serve"
+    "start": "cross-env kill-port 5001 && npm run start:serve"
   },
   "dependencies": {
     "@itpr/common": "^1.0.0",

@@ -5,11 +5,12 @@
   "scripts": {
     "lint": "lerna run --concurrency 1 lint",
     "postinstall": "lerna bootstrap",
-    "start": "lerna run start --parallel --scope @itpr/*",
-    "build": "lerna run build --parallel --scope @itpr/*",
+    "start": "cross-env ./sh/reboot.sh && lerna run start --parallel --scope @itpr/*",
+    "build:dev": "lerna run build --parallel --scope @itpr/*",
     "pub": "lerna publish --conventional-commits --yes"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "kill-port": "^1.6.1",
     "lerna": "^4.0.0"
   }
