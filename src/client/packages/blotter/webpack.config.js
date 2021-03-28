@@ -14,7 +14,8 @@ const config = merge(commonWebpackConfig, {
     },
     devServer: {
         contentBase: './dist',
-        port: process.env.WBP_PORT
+        port: process.env.WBP_PORT,
+        disableHostCheck: true
     }
 })
 

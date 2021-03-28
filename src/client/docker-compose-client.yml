@@ -15,12 +15,16 @@ services:
     container_name: client
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile-dev
       args:
         - CI=true
         - NPM_TOKEN=${NPM_TOKEN}
         - REACT_APP_BUILD_VERSION=${BUILD_VERSION}
     ports:
       - "80:80"
+    # network_mode: "host"
     environment:
       - ENVIRONMENT_NAME=${ENVIRONMENT_NAME}
+    volumes:
+      - ./packages/blotter/dist:/usr/share/nginx/html/blotter
+      - ./packages/shell/dist:/usr/share/nginx/html/shell
