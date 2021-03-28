@@ -5,6 +5,11 @@ const { DefinePlugin } = require('webpack')
 require('dotenv').config()
 
 const config = merge(commonWebpackConfig, {
+    module: {
+        rules: [
+
+        ],
+    },
     entry: {
         shell: "./src/index.ts",
     },
