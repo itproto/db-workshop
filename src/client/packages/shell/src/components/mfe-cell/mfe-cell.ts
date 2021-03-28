@@ -1,24 +1,32 @@
 
 import { customElement } from '../common/lit-utils';
-const policy = `sandbox="allow-forms allow-modals allow-scripts"`;
+
+
 
 @customElement('mfe-cell')
 export class MfeCellElement extends HTMLElement {
 
-    constructor() {
-        super();
-        const shadowRoot = this.attachShadow({ mode: 'open' });
-        shadowRoot.innerHTML = this.render();
-    }
-    render() {
-        return `<div>
-        <iframe ${policy} seamless 
-        loading = "lazy"
-        src = "http://localhost/blotter"
-        height = "500px" width = "500px"> 
-        </iframe>`;
-    }
+  constructor() {
+    super();
+    const shadowRoot = this.attachShadow({ mode: 'open' });
+    shadowRoot.innerHTML = this.render();
 
-    static create = () => document.createElement('itpr-mfe-cell')
+  }
+  render() {
+    return `
+         <div class="grid-stack">
+           <div class="grid-stack-item">
+             <div class="grid-stack-item-content">Item 1</div>
+           </div>
+         </div>
+         `
+
+  }
+
+  connectedCallback() {
+
+  }
+
+  static create = () => document.createElement('itpr-mfe-cell')
 }
 

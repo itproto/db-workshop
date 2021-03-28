@@ -7,7 +7,10 @@ require('dotenv').config()
 const config = merge(commonWebpackConfig, {
     module: {
         rules: [
-
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
         ],
     },
     entry: {
