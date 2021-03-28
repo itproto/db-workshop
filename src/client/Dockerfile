@@ -20,6 +20,7 @@ WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
 # Copy static assets from builder stage
 COPY  ./packages/blotter/dist blotter
+COPY  ./packages/shell/dist shell
 #COPY --from=builder /app/packages/blotter/dist ./blotter
 #COPY --from=builder /app/packages/shell/dist ./shell
 #COPY --from=builder /app/packages/blotter/dist ./foo
