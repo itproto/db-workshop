@@ -1,5 +1,5 @@
 import { create } from './template';
-
+// https://github.com/bengfarrell/webcomponentsinaction/tree/master/chapter11/step2-styled-colorpicker/components
 type IDom = ReturnType<typeof create>
 const ns = `itpr`;
 
